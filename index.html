@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>记忆票根</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone-frame" aria-label="记忆票根小程序原型">
+        <header class="topbar">
+          <button class="icon-button" data-route="archive" aria-label="打开档案">⌂</button>
+          <div>
+            <strong>记忆票根</strong>
+            <span>给值得留下的一刻</span>
+          </div>
+          <button class="icon-button" data-route="story" aria-label="打开故事页">⌁</button>
+        </header>
+
+        <nav class="progress-tabs" aria-label="原型页面">
+          <button class="tab is-active" data-route="home">开场</button>
+          <button class="tab" data-route="archive">档案</button>
+          <button class="tab" data-route="capture">采集</button>
+          <button class="tab" data-route="preview">预览</button>
+          <button class="tab" data-route="story">故事</button>
+        </nav>
+
+        <section class="screen is-active" id="screen-home">
+          <div class="brand-hero">
+            <p class="brand-title">记忆票根</p>
+            <p>给值得留下的一刻，留一张能听见的票</p>
+            <span>✦ ︶ ︶ ︶</span>
+          </div>
+          <div class="hero-photo">
+            <img src="./assets/memory-tabletop.png" alt="纸质票根、照片和信封" />
+          </div>
+          <div class="opening-copy">
+            <p class="eyebrow">Memory Ticket</p>
+            <h1>你想留下什么回忆？</h1>
+            <p>给一张照片、一段声音、一个日期，AI 帮你整理成能听见的票。</p>
+          </div>
+          <div class="trust-row" aria-label="产品特点">
+            <span>默认私密</span>
+            <span>保留原声</span>
+            <span>可做实体</span>
+          </div>
+          <div class="choice-stack" id="sceneChoices">
+            <button class="choice is-selected" data-scene="一次旅行">
+              <i class="choice-icon">▣</i>
+              <span>一次旅行</span>
+              <small>把路上的某一天做成登机牌或车票</small>
+            </button>
+            <button class="choice" data-scene="一个毕业季">
+              <i class="choice-icon">⌂</i>
+              <span>一个毕业季</span>
+              <small>留下同学、教室、操场和告别那天</small>
+            </button>
+            <button class="choice" data-scene="一个重要的人">
+              <i class="choice-icon">●</i>
+              <span>一个重要的人</span>
+              <small>把 TA 的声音和老照片放进一张票根</small>
+            </button>
+          </div>
+          <button class="primary-action" data-route="capture">从这段回忆开始</button>
+        </section>
+
+        <section class="screen" id="screen-archive">
+          <div class="section-heading">
+            <p class="eyebrow">Archive</p>
+            <h2>我的记忆档案</h2>
+            <p>已经留下的票根、未完成的草稿和下一张建议。</p>
+          </div>
+          <div class="archive-summary">
+            <div><strong>8</strong><span>已完成</span></div>
+            <div><strong>3</strong><span>草稿</span></div>
+            <div><strong>2</strong><span>待补充</span></div>
+          </div>
+          <div class="ticket-list">
+            <article class="mini-ticket train">
+              <span>TRAIN 05 · NFC</span>
+              <h3>去海边的那天</h3>
+              <p>2025.06.18 · 厦门</p>
+              <div class="qr-mock small"></div>
+            </article>
+            <article class="mini-ticket campus">
+              <span>CAMPUS 12</span>
+              <h3>毕业前最后一节课</h3>
+              <p>2024.06.21 · 图书馆</p>
+              <div class="qr-mock small"></div>
+            </article>
+            <article class="draft-row">
+              <div>
+                <strong>妈妈的第一份工作</strong>
+                <span>还差 2 个问题</span>
+              </div>
+              <button data-route="capture">继续</button>
+            </article>
+            <article class="upgrade-card">
+              <span>推荐下一步</span>
+              <strong>把 6 张旅行票根做成一组</strong>
+              <p>含收纳信封、私密故事页和原声合集。</p>
+            </article>
+          </div>
+          <button class="secondary-action" data-route="home">继续做一张</button>
+        </section>
+
+        <section class="screen" id="screen-capture">
+          <div class="section-heading">
+            <p class="eyebrow">Collect</p>
+            <h2>先给一个记忆线索</h2>
+            <p>照片、视频、文字和语音都可以。每次只回答一个问题。</p>
+          </div>
+          <div class="asset-tabs" aria-label="记忆素材类型">
+            <span class="is-active">照片 / 视频</span>
+            <span>文字</span>
+            <span>语音</span>
+          </div>
+          <div class="upload-panel">
+            <label class="photo-tile upload-trigger">
+              <input id="photoInput" type="file" accept="image/*,video/*" />
+              <img class="memory-photo" src="./assets/memory-tabletop.png" alt="已上传的记忆照片" />
+              <video id="memoryVideo" muted playsinline controls hidden></video>
+              <span id="photoState">点击添加照片或视频</span>
+            </label>
+            <div class="meta-fields">
+              <label>
+                <span>日期</span>
+                <input id="memoryDate" value="2025.06.18" />
+              </label>
+              <label>
+                <span>地点</span>
+                <input id="memoryLocation" value="厦门 · 海边" />
+              </label>
+            </div>
+          </div>
+          <div class="interview-box">
+            <span class="ai-label">AI 轻访谈</span>
+            <div class="chat-bubble ai">
+              <h3 id="questionText">这张照片拍完之后，发生了什么？</h3>
+            </div>
+            <textarea id="answerInput">我们沿着海边走了很久，谁都没有急着回去。那天风很大，后来我们在便利店门口分了一瓶汽水。</textarea>
+            <div class="voice-row">
+              <button class="record-button" id="recordButton" aria-label="录音">●</button>
+              <div>
+                <strong id="recordState">原声 00:28</strong>
+                <span id="recordHint">会保留在私密故事页</span>
+              </div>
+            </div>
+            <div class="memory-tags" aria-label="AI 已识别的记忆线索">
+              <span>黄昏</span>
+              <span>海边</span>
+              <span>便利店汽水</span>
+            </div>
+            <div class="asset-summary">
+              <span id="mediaSummary">已添加 1 张示例照片</span>
+              <span id="textSummary">文字 58 字</span>
+              <span id="voiceSummary">语音 28 秒</span>
+            </div>
+          </div>
+          <div class="capture-actions">
+            <button class="secondary-action" id="saveDraft">保存草稿</button>
+            <button class="primary-action" data-route="preview">生成票根</button>
+          </div>
+          <button class="text-action" id="nextQuestion">换一个问题</button>
+        </section>
+
+        <section class="screen" id="screen-preview">
+          <div class="section-heading compact">
+            <p class="eyebrow">Preview</p>
+            <h2>确认票根和故事页</h2>
+          </div>
+          <div class="template-switcher" id="templateSwitcher">
+            <button class="is-selected" data-template="train">火车票</button>
+            <button data-template="boarding">登机牌</button>
+            <button data-template="campus">校园证</button>
+          </div>
+          <article class="ticket-card train" id="ticketCard">
+            <div class="ticket-punch top"></div>
+            <div class="ticket-punch bottom"></div>
+            <div class="ticket-main">
+              <span class="ticket-kind" id="ticketKind">MEMORY TRAIN</span>
+              <h3 id="ticketTitle" contenteditable="true">去海边的那天</h3>
+              <p id="ticketSubtitle" contenteditable="true">风很大，我们把黄昏留在一张票上。</p>
+              <div class="ticket-meta">
+                <span id="ticketFrom">FROM 厦门</span>
+                <span>TO 那个黄昏</span>
+              </div>
+            </div>
+            <div class="ticket-side">
+              <span>DATE</span>
+              <strong id="ticketDate">2025.06.18</strong>
+              <span>GATE</span>
+              <strong>A-07</strong>
+            </div>
+          </article>
+          <article class="ticket-back">
+            <p id="ticketBackCopy" contenteditable="true">那天我们沿着海边走了很久，谁都没有急着回去。风把头发吹得很乱，便利店门口那瓶汽水却很甜。后来每次听见海浪声，我都会想起这个黄昏。</p>
+            <div class="back-footer">
+              <span>扫码听 28 秒原声</span>
+              <div class="qr-mock" aria-label="二维码示意"></div>
+            </div>
+          </article>
+          <div class="product-options">
+            <button class="product-option is-selected">
+              <strong>单张 QR 票根</strong>
+              <span>¥39 起</span>
+            </button>
+            <button class="product-option">
+              <strong>6 张套组</strong>
+              <span>¥199 起</span>
+            </button>
+          </div>
+          <div class="privacy-strip">
+            <label><input type="checkbox" checked /> 故事页默认私密</label>
+            <label><input type="checkbox" checked /> 印刷前再次确认文字</label>
+          </div>
+          <div class="capture-actions">
+            <button class="secondary-action" data-route="capture">继续补充</button>
+            <button class="primary-action" data-route="story">查看扫码页</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-story">
+          <div class="privacy-badge">私密故事页 · 仅链接可见</div>
+          <div class="story-hero">
+            <img src="./assets/memory-tabletop.png" alt="故事页照片" />
+            <div>
+              <span id="storyMeta">2025.06.18 · 厦门</span>
+              <h2 id="storyTitle">去海边的那天</h2>
+            </div>
+          </div>
+          <div class="audio-player">
+            <button id="playButton" aria-label="播放原声">▶</button>
+            <audio id="storyAudio" hidden></audio>
+            <div class="waveform" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <span id="audioTime">00:28</span>
+          </div>
+          <div class="story-actions">
+            <button class="secondary-action" data-route="capture">继续补充</button>
+            <button class="primary-action" data-route="home">我也做一张</button>
+          </div>
+          <article class="story-copy">
+            <p id="storyParagraphOne">我们沿着海边走了很久，谁都没有急着回去。那天风很大，很多话都被吹散了，只剩下脚印、笑声和便利店门口那瓶分着喝的汽水。</p>
+            <p id="storyParagraphTwo">后来我才发现，重要的不是那片海有多漂亮，而是那一天我们都还在同一个傍晚里。</p>
+          </article>
+          <div class="photo-strip" aria-label="照片合集">
+            <img src="./assets/memory-tabletop.png" alt="照片 1" />
+            <img src="./assets/memory-tabletop.png" alt="照片 2" />
+            <img src="./assets/memory-tabletop.png" alt="照片 3" />
+          </div>
+          <div class="story-video-card" id="storyVideoCard" hidden>
+            <video id="storyVideo" controls playsinline></video>
+            <span>这段视频也会保存在私密故事页</span>
+          </div>
+          <div class="message-box">
+            <input id="messageInput" placeholder="给这张票留一句话" />
+            <button id="addMessage">留言</button>
+          </div>
+          <div class="message-list" id="messageList"></div>
+        </section>
+      </section>
+
+      <aside class="product-panel">
+        <p class="eyebrow">Prototype Notes</p>
+        <h2>一张能听见的票</h2>
+        <p>首版建议用 H5 先测转化，再迁移微信小程序。核心闭环是采集线索、AI 轻访谈、生成票根、绑定故事页、实体下单。</p>
+        <div class="milestone-list">
+          <span>QR 票根 MVP</span>
+          <span>6 张套组</span>
+          <span>NFC 票根</span>
+          <span>迷你 zine</span>
+        </div>
+      </aside>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

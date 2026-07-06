@@ -1,0 +1,41 @@
+<view class="page archive-page">
+  <view class="page-head">
+    <view>
+      <text class="title">我的票根</text>
+      <text class="subtitle">每一张票，都是一段记忆</text>
+    </view>
+    <button class="add-btn" bindtap="createNew">＋</button>
+  </view>
+
+  <view class="daily-card">
+    <text class="daily-label">今日建议</text>
+    <text class="daily-title">把毕业旅行做成 6 张套组</text>
+    <text class="daily-copy">适合放进信封、相册和扫码故事页。</text>
+  </view>
+
+  <view class="ticket-stack">
+    <view
+      wx:for="{{memories}}"
+      wx:key="id"
+      class="archive-ticket {{index === 0 ? 'ticket-bg' : index === 1 ? 'light-ticket' : 'sepia-ticket'}}"
+      data-id="{{item.id}}"
+      bindtap="openStory"
+    >
+      <image wx:if="{{index === 0}}" class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />
+      <view class="ticket-content">
+        <text class="ticket-kicker">{{item.scene}} · {{item.template}}</text>
+        <text class="ticket-title">{{item.title}}</text>
+        <text class="ticket-meta">{{item.date || '日期待补充'}} · {{item.location || '地点待补充'}}</text>
+        <view class="progress-line">
+          <view class="progress-bar" style="width: {{index === 0 ? 80 : index === 1 ? 60 : 35}}%;"></view>
+        </view>
+        <text class="ticket-progress">{{item.progress}}</text>
+      </view>
+      <view class="ticket-actions">
+        <button catchtap="editMemory" data-id="{{item.id}}">编辑</button>
+        <view wx:if="{{index === 0}}" class="nfc">NFC</view>
+        <view wx:else class="qr-mini"></view>
+      </view>
+    </view>
+  </view>
+</view>

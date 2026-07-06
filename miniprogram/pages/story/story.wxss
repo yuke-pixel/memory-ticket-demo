@@ -1,0 +1,169 @@
+.share-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #2b2924;
+}
+
+.step-index {
+  display: block;
+  color: #8a8172;
+  font-size: 22rpx;
+}
+
+.share-title {
+  display: block;
+  margin-top: 8rpx;
+  color: #2b2924;
+  font-size: 32rpx;
+}
+
+.share-row button {
+  color: #5d91ad;
+  font-size: 24rpx;
+}
+
+.privacy-chip {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  margin-top: 22rpx;
+  padding: 12rpx 18rpx;
+  border: 1rpx solid rgba(93, 145, 173, 0.26);
+  border-radius: 999rpx;
+  background: #dcebf1;
+  color: #3c7896;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.ticket {
+  position: relative;
+  margin-top: 24rpx;
+  height: 210rpx;
+  padding: 28rpx;
+  border: 1rpx solid #dfd2bf;
+  border-radius: 18rpx;
+  box-shadow: 0 18rpx 34rpx rgba(83, 70, 54, 0.12);
+}
+
+.ticket::after {
+  content: "";
+  position: absolute;
+  left: 16rpx;
+  right: 16rpx;
+  top: 16rpx;
+  bottom: 16rpx;
+  border: 1rpx solid rgba(138, 129, 114, 0.2);
+  border-radius: 12rpx;
+}
+
+.ticket-title {
+  display: block;
+  color: #2b2924;
+  font-size: 34rpx;
+}
+
+.ticket-meta {
+  display: block;
+  margin-top: 18rpx;
+  color: #2b2924;
+  white-space: pre-line;
+  font-size: 22rpx;
+}
+
+.nfc {
+  position: absolute;
+  left: 28rpx;
+  bottom: 22rpx;
+  color: #2b2924;
+  font-size: 20rpx;
+}
+
+.audio-card {
+  margin-top: 34rpx;
+  height: 98rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 22rpx;
+}
+
+.play-btn {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  background: #5d91ad;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.wave {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.wave text {
+  width: 8rpx;
+  height: 28rpx;
+  border-radius: 8rpx;
+  background: #5d91ad;
+}
+
+.wave text:nth-child(2n) {
+  height: 42rpx;
+}
+
+.audio-copy {
+  color: #8a8172;
+  font-size: 22rpx;
+}
+
+.story-copy {
+  margin-top: 30rpx;
+  padding: 28rpx;
+  border: 1rpx solid #dfd2bf;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12rpx 24rpx rgba(83, 70, 54, 0.06);
+}
+
+.story-copy text {
+  color: #2b2924;
+  font-size: 26rpx;
+  line-height: 1.9;
+}
+
+.story-media {
+  margin-top: 24rpx;
+  width: 100%;
+  height: 320rpx;
+  border-radius: 22rpx;
+  background: #111;
+}
+
+.photo-row {
+  margin-top: 20rpx;
+  display: flex;
+  gap: 16rpx;
+}
+
+.photo-row image {
+  flex: 1;
+  width: 0;
+  height: 132rpx;
+  border-radius: 16rpx;
+}
+
+.story-cta {
+  margin-top: 30rpx;
+  display: flex;
+  gap: 18rpx;
+}
+
+.story-cta .secondary-btn,
+.story-cta .primary-btn {
+  flex: 1;
+}

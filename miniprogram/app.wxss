@@ -1,0 +1,94 @@
+page {
+  min-height: 100vh;
+  background: #f9f5ee;
+  color: #2b2924;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+view,
+text,
+button,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  line-height: 1;
+}
+
+button::after {
+  border: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 40rpx 32rpx 56rpx;
+}
+
+.eyebrow {
+  color: #b65f4a;
+  font-size: 22rpx;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: #8a8172;
+}
+
+.primary-btn,
+.secondary-btn {
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.primary-btn {
+  background: #2b2924;
+  color: #fff;
+}
+
+.secondary-btn {
+  border: 1rpx solid #dfd2bf;
+  background: rgba(255, 255, 255, 0.72);
+  color: #2b2924;
+}
+
+.paper-card {
+  border: 1rpx solid #dfd2bf;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 16rpx 36rpx rgba(83, 70, 54, 0.08);
+}
+
+.ticket-bg {
+  background: linear-gradient(90deg, rgba(249, 245, 238, 0.96), rgba(249, 245, 238, 0.58));
+}
+
+.ticket-art {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.56;
+  z-index: 0;
+}
+
+.ticket-bg > view,
+.ticket-bg > text,
+.ticket-bg > button {
+  position: relative;
+  z-index: 1;
+}

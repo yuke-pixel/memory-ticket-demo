@@ -1,0 +1,143 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.brand {
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14rpx;
+}
+
+.brand-name {
+  font-size: 56rpx;
+  letter-spacing: 4rpx;
+  color: #2b2924;
+}
+
+.brand-copy {
+  color: #6f675d;
+  font-size: 26rpx;
+}
+
+.brand-mark {
+  color: #e4bd62;
+  font-size: 34rpx;
+}
+
+.prompt {
+  margin-top: 74rpx;
+  margin-bottom: 44rpx;
+  font-size: 34rpx;
+  text-align: center;
+}
+
+.choice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 34rpx;
+}
+
+.choice {
+  height: 128rpx;
+  padding: 0 46rpx;
+  display: flex;
+  align-items: center;
+  gap: 34rpx;
+}
+
+.choice-icon {
+  width: 52rpx;
+  height: 52rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14rpx;
+  font-size: 28rpx;
+}
+
+.choice-icon.blue {
+  background: #dcebf1;
+  color: #3c7896;
+}
+
+.choice-icon.tan {
+  background: #efe1cf;
+  color: #81634a;
+}
+
+.choice-icon.gray {
+  background: #e8e3dc;
+  color: #4f4b43;
+}
+
+.choice-title {
+  font-size: 30rpx;
+  color: #2b2924;
+}
+
+.sample-ticket {
+  position: relative;
+  margin-top: 44rpx;
+  min-height: 142rpx;
+  padding: 24rpx;
+  overflow: hidden;
+  border: 1rpx solid #dfd2bf;
+  border-radius: 18rpx;
+  box-shadow: 0 16rpx 30rpx rgba(83, 70, 54, 0.1);
+}
+
+.sample-ticket::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 98rpx;
+  bottom: 0;
+  border-left: 2rpx dashed rgba(138, 129, 114, 0.45);
+}
+
+.sample-kicker {
+  display: block;
+  color: #5d91ad;
+  font-size: 20rpx;
+  font-weight: 800;
+}
+
+.sample-title {
+  display: block;
+  margin-top: 12rpx;
+  color: #2b2924;
+  font-size: 30rpx;
+}
+
+.sample-meta {
+  display: block;
+  margin-top: 10rpx;
+  color: #8a8172;
+  font-size: 22rpx;
+}
+
+.sample-qr {
+  position: absolute;
+  right: 24rpx;
+  bottom: 24rpx;
+  width: 54rpx;
+  height: 54rpx;
+  border: 6rpx solid #fff;
+  border-radius: 8rpx;
+  background:
+    linear-gradient(90deg, #2b2924 10rpx, transparent 0) 0 0 / 20rpx 20rpx,
+    linear-gradient(#2b2924 10rpx, transparent 0) 0 0 / 20rpx 20rpx,
+    #f7f2e9;
+}
+
+.flow-line {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #8a8172;
+  font-size: 20rpx;
+}

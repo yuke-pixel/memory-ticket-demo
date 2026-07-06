@@ -1,0 +1,51 @@
+<view class="page capture-page">
+  <view class="page-head">
+    <text class="step-index">3. 记录这段记忆</text>
+    <text class="title">先从一张照片开始</text>
+    <text class="subtitle">一张照片 / 视频 + 一段文字 + 一段声音</text>
+    <text class="mark">✦</text>
+  </view>
+
+  <button class="media-box paper-card" bindtap="chooseMedia">
+    <block wx:if="{{mediaType === 'video'}}">
+      <video class="media-preview" src="{{mediaPath}}" controls></video>
+    </block>
+    <block wx:elif="{{mediaPath}}">
+      <image class="media-preview" src="{{mediaPath}}" mode="aspectFill" />
+    </block>
+    <block wx:else>
+      <text class="plus">＋</text>
+      <text class="add-copy">添加照片 / 视频</text>
+    </block>
+  </button>
+
+  <view class="asset-row">
+    <view class="asset-chip active">照片 / 视频</view>
+    <view class="asset-chip {{text ? 'active' : ''}}">文字</view>
+    <view class="asset-chip {{recordText === '已保存原声' ? 'active' : ''}}">语音</view>
+  </view>
+
+  <view class="form-card paper-card">
+    <view class="field">
+      <text>日期（可选）</text>
+      <input value="{{date}}" bindinput="onDateInput" placeholder="2023 / 07 / 18" />
+    </view>
+    <view class="field">
+      <text>地点（可选）</text>
+      <input value="{{location}}" bindinput="onLocationInput" placeholder="青岛 · 海边" />
+    </view>
+    <view class="field">
+      <text>想起那天，你印象最深的是什么？</text>
+      <textarea value="{{text}}" bindinput="onTextInput" placeholder="比如：发生了什么？当时的心情？谁和你在一起？" />
+    </view>
+  </view>
+
+  <view class="record-area">
+    <text class="wave-line">︶ ︶ ︶</text>
+    <text class="record-time">{{recordText}}</text>
+    <button class="record-btn {{recording ? 'recording' : ''}}" bindtap="toggleRecord">🎙</button>
+    <text class="record-hint">按住这段声音</text>
+  </view>
+
+  <button class="primary-btn" bindtap="goPreview">生成票根</button>
+</view>

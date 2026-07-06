@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/archive/archive",
+    "pages/capture/capture",
+    "pages/preview/preview",
+    "pages/story/story"
+  ],
+  "window": {
+    "navigationBarTitleText": "记忆票根",
+    "navigationBarBackgroundColor": "#f9f5ee",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f9f5ee"
+  },
+  "tabBar": {
+    "color": "#8a8172",
+    "selectedColor": "#2b2924",
+    "backgroundColor": "#fbf8f2",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "开场"
+      },
+      {
+        "pagePath": "pages/archive/archive",
+        "text": "票根"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

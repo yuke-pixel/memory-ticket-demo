@@ -1,0 +1,47 @@
+<view class="page story-page">
+  <view class="share-row">
+    <view>
+      <text class="step-index">5. 扫码后的故事页</text>
+      <text class="share-title">扫码回到那一天</text>
+    </view>
+    <button open-type="share">分享</button>
+  </view>
+  <view class="privacy-chip">私密故事页 · 仅链接可见</view>
+
+  <view class="ticket ticket-bg">
+    <image class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />
+    <text class="ticket-title">{{memory.title}}</text>
+    <text class="ticket-meta">{{memory.date}}\n{{memory.location}}</text>
+    <text class="nfc">NFC</text>
+  </view>
+
+  <view class="audio-card paper-card">
+    <button class="play-btn" bindtap="toggleAudio">{{playing ? 'Ⅱ' : '▶'}}</button>
+    <view class="wave">
+      <text></text><text></text><text></text><text></text><text></text><text></text>
+    </view>
+    <text class="audio-copy">原声音频</text>
+  </view>
+
+  <view class="story-copy">
+    <text>{{memory.text}}</text>
+  </view>
+
+  <block wx:if="{{memory.mediaType === 'video'}}">
+    <video class="story-media" src="{{memory.mediaPath}}" controls></video>
+  </block>
+  <block wx:else>
+    <image class="story-media" src="{{memory.mediaPath}}" mode="aspectFill" />
+  </block>
+
+  <view class="photo-row">
+    <image src="/assets/seaside-train-ticket.png" mode="aspectFill" />
+    <image src="{{memory.mediaPath}}" mode="aspectFill" />
+    <image src="/assets/memory-tabletop.png" mode="aspectFill" />
+  </view>
+
+  <view class="story-cta">
+    <button class="secondary-btn" bindtap="backCapture">继续补充</button>
+    <button class="primary-btn" bindtap="makeMine">我也做一张</button>
+  </view>
+</view>
