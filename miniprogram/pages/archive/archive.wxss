@@ -27,38 +27,8 @@
   font-size: 36rpx;
 }
 
-.daily-card {
-  margin-top: 30rpx;
-  padding: 26rpx 28rpx;
-  border: 1rpx solid #dfd2bf;
-  border-radius: 24rpx;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(220, 235, 241, 0.42));
-  box-shadow: 0 14rpx 28rpx rgba(83, 70, 54, 0.08);
-}
-
-.daily-label {
-  display: block;
-  color: #b65f4a;
-  font-size: 22rpx;
-  font-weight: 800;
-}
-
-.daily-title {
-  display: block;
-  margin-top: 10rpx;
-  color: #2b2924;
-  font-size: 30rpx;
-}
-
-.daily-copy {
-  display: block;
-  margin-top: 8rpx;
-  color: #8a8172;
-  font-size: 22rpx;
-}
-
 .ticket-stack {
-  margin-top: 34rpx;
+  margin-top: 38rpx;
   display: flex;
   flex-direction: column;
   gap: 24rpx;

@@ -1,7 +1,6 @@
 <view class="page preview-page">
   <view class="nav-row">
     <view>
-      <text class="step-index">4. 设计你的票根</text>
       <text class="nav-title">设计你的票根</text>
     </view>
     <button bindtap="goStory">预览</button>
@@ -33,18 +32,6 @@
     <button class="template">登机牌</button>
     <button class="template">校园卡</button>
     <button class="template">明信片</button>
-  </view>
-
-  <view class="section-label">选择交付</view>
-  <view class="sku-row">
-    <view class="sku active">
-      <text class="sku-title">单张 QR 票根</text>
-      <text class="sku-price">¥39 起</text>
-    </view>
-    <view class="sku">
-      <text class="sku-title">6 张套组</text>
-      <text class="sku-price">¥199 起</text>
-    </view>
   </view>
 
   <button class="primary-btn" bindtap="goStory">查看扫码故事页</button>

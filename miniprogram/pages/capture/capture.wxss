@@ -3,13 +3,6 @@
   text-align: center;
 }
 
-.step-index {
-  display: block;
-  margin-bottom: 18rpx;
-  color: #8a8172;
-  font-size: 22rpx;
-}
-
 .title {
   display: block;
   font-size: 36rpx;
@@ -59,9 +52,7 @@
 }
 
 .asset-row {
-  margin-top: 20rpx;
-  display: flex;
-  gap: 14rpx;
+  display: none;
 }
 
 .asset-chip {

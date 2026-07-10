@@ -5,15 +5,8 @@
   color: #2b2924;
 }
 
-.step-index {
-  display: block;
-  color: #8a8172;
-  font-size: 22rpx;
-}
-
 .nav-title {
   display: block;
-  margin-top: 8rpx;
   color: #2b2924;
   font-size: 34rpx;
 }
@@ -169,40 +162,6 @@
 .template.active {
   background: #dcebf1;
   color: #2b2924;
-}
-
-.sku-row {
-  display: flex;
-  gap: 18rpx;
-}
-
-.sku {
-  flex: 1;
-  min-height: 112rpx;
-  padding: 22rpx;
-  border: 1rpx solid #dfd2bf;
-  border-radius: 20rpx;
-  background: rgba(255, 255, 255, 0.68);
-}
-
-.sku.active {
-  border-color: rgba(182, 95, 74, 0.55);
-  background: #fff6ef;
-}
-
-.sku-title {
-  display: block;
-  color: #2b2924;
-  font-size: 24rpx;
-  font-weight: 800;
-}
-
-.sku-price {
-  display: block;
-  margin-top: 14rpx;
-  color: #b65f4a;
-  font-size: 22rpx;
-  font-weight: 800;
 }
 
 .primary-btn {

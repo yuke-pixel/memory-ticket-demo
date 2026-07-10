@@ -1,12 +1,10 @@
 <view class="page story-page">
   <view class="share-row">
     <view>
-      <text class="step-index">5. 扫码后的故事页</text>
       <text class="share-title">扫码回到那一天</text>
     </view>
     <button open-type="share">分享</button>
   </view>
-  <view class="privacy-chip">私密故事页 · 仅链接可见</view>
 
   <view class="ticket ticket-bg">
     <image class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />

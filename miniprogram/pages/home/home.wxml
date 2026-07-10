@@ -1,39 +1,23 @@
 <view class="page home-page">
-  <view class="brand">
-    <text class="brand-name">记忆票根</text>
-    <text class="brand-copy">给值得留下的一刻，留一张能听见的票</text>
+  <view class="prompt-wrap">
+    <text class="prompt">你想留下什么回忆？</text>
     <text class="brand-mark">✦ ︶ ︶ ︶</text>
   </view>
 
-  <view class="prompt">你想留下什么回忆？</view>
-
   <view class="choice-list">
     <button class="choice paper-card" data-scene="毕业" bindtap="chooseScene">
-      <text class="choice-icon blue">▰</text>
+      <text class="choice-icon blue">🎓</text>
       <text class="choice-title">毕业</text>
     </button>
     <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
-      <text class="choice-icon tan">▣</text>
+      <text class="choice-icon tan">🧳</text>
       <text class="choice-title">旅行</text>
     </button>
     <button class="choice paper-card" data-scene="一个重要的人" bindtap="chooseScene">
-      <text class="choice-icon gray">●</text>
+      <text class="choice-icon gray">👥</text>
       <text class="choice-title">一个重要的人</text>
     </button>
   </view>
 
-  <view class="sample-ticket ticket-bg">
-    <image class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />
-    <text class="sample-kicker">示例票根</text>
-    <text class="sample-title">毕业旅行 · 2023 夏</text>
-    <text class="sample-meta">照片 / 视频 · 文字 · 原声</text>
-    <view class="sample-qr"></view>
-  </view>
-
-  <view class="flow-line">
-    <text>选类型</text>
-    <text>采集素材</text>
-    <text>生成票根</text>
-    <text>扫码听故事</text>
-  </view>
+  <view class="bottom-wave">⌁</view>
 </view>

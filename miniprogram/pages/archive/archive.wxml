@@ -7,12 +7,6 @@
     <button class="add-btn" bindtap="createNew">＋</button>
   </view>
 
-  <view class="daily-card">
-    <text class="daily-label">今日建议</text>
-    <text class="daily-title">把毕业旅行做成 6 张套组</text>
-    <text class="daily-copy">适合放进信封、相册和扫码故事页。</text>
-  </view>
-
   <view class="ticket-stack">
     <view
       wx:for="{{memories}}"
