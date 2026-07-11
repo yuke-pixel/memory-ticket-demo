@@ -94,9 +94,10 @@
 .choice {
   position: relative;
   height: 142rpx;
-  padding: 0 202rpx 0 184rpx;
+  padding: 0 233rpx;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 26rpx;
   border-radius: 18rpx;
   box-shadow: 0 18rpx 34rpx rgba(83, 70, 54, 0.1);
@@ -150,8 +151,8 @@
 .choice-text {
   position: relative;
   z-index: 1;
-  flex: 1;
-  min-width: 0;
+  width: 360rpx;
+  flex: 0 0 360rpx;
 }
 
 .choice-desc {
