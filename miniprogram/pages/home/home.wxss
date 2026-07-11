@@ -1,11 +1,36 @@
 .home-page {
+  position: relative;
   min-height: 100vh;
   padding-top: 86rpx;
   padding-left: 28rpx;
   padding-right: 18rpx;
+  overflow: hidden;
+}
+
+.decor {
+  position: absolute;
+  z-index: 0;
+  color: rgba(213, 169, 79, 0.72);
+  pointer-events: none;
+}
+
+.decor-left {
+  left: 54rpx;
+  top: 126rpx;
+  font-size: 34rpx;
+}
+
+.decor-right {
+  right: 42rpx;
+  top: 156rpx;
+  color: rgba(93, 145, 173, 0.58);
+  font-size: 30rpx;
+  letter-spacing: 8rpx;
 }
 
 .prompt-wrap {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,21 +84,31 @@
 
 .choice-list {
   margin-top: 52rpx;
-  margin-left: -83rpx;
-  margin-right: -83rpx;
+  margin-left: -233rpx;
+  margin-right: -233rpx;
   display: flex;
   flex-direction: column;
   gap: 30rpx;
 }
 
 .choice {
+  position: relative;
   height: 142rpx;
-  padding: 0 52rpx 0 34rpx;
+  padding: 0 202rpx 0 184rpx;
   display: flex;
   align-items: center;
   gap: 26rpx;
   border-radius: 18rpx;
   box-shadow: 0 18rpx 34rpx rgba(83, 70, 54, 0.1);
+}
+
+.choice::after {
+  content: "";
+  position: absolute;
+  top: 20rpx;
+  right: 164rpx;
+  bottom: 20rpx;
+  border-left: 1rpx dashed rgba(138, 129, 114, 0.22);
 }
 
 .choice-icon {
@@ -100,8 +135,8 @@
 }
 
 .choice-icon.soft {
-  background: #f3eadf;
-  color: #d5a94f;
+  background: #eef1e7;
+  color: #7f8f72;
 }
 
 .choice-title {
@@ -113,6 +148,8 @@
 }
 
 .choice-text {
+  position: relative;
+  z-index: 1;
   flex: 1;
   min-width: 0;
 }
@@ -126,8 +163,22 @@
   white-space: nowrap;
 }
 
+.paper-trim {
+  margin: 34rpx auto 0;
+  width: 190rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paper-trim text {
+  width: 34rpx;
+  height: 8rpx;
+  border-radius: 999rpx;
+  background: rgba(143, 178, 196, 0.5);
+}
+
 .bottom-wave {
-  margin-top: 38rpx;
+  margin-top: 22rpx;
   color: #8fb2c4;
   text-align: center;
   font-size: 34rpx;
