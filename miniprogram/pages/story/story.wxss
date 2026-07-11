@@ -39,12 +39,26 @@
 
 .ticket-title {
   display: block;
+  position: relative;
+  z-index: 1;
+  margin-top: 16rpx;
   color: #2b2924;
   font-size: 34rpx;
 }
 
+.brand {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #5d91ad;
+  font-size: 20rpx;
+  font-weight: 800;
+}
+
 .ticket-meta {
   display: block;
+  position: relative;
+  z-index: 1;
   margin-top: 18rpx;
   color: #2b2924;
   white-space: pre-line;
@@ -53,6 +67,7 @@
 
 .nfc {
   position: absolute;
+  z-index: 1;
   left: 28rpx;
   bottom: 22rpx;
   color: #2b2924;

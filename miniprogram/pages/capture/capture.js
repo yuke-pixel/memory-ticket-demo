@@ -10,6 +10,7 @@ Page({
     mediaType: "image",
     mediaPath: "",
     scene: "",
+    sceneProfile: {},
     recording: false,
     recordText: "00:00",
     recordStartedAt: 0,
@@ -19,6 +20,7 @@ Page({
   onLoad(options) {
     const id = options.id || memoryStore.getActiveMemoryId();
     const memory = memoryStore.getMemory(id);
+    const sceneProfile = memoryStore.getSceneProfile(memory.scene);
     memoryStore.setActiveMemoryId(memory.id);
     this.setData({
       id: memory.id,
@@ -27,11 +29,12 @@ Page({
       text: memory.text,
       mediaType: memory.mediaType,
       mediaPath: memory.mediaPath,
-      scene: memory.scene
+      scene: memory.scene,
+      sceneProfile
     });
 
     this.onRecorderStop = (res) => {
-      this.saveCurrent({ audioPath: res.tempFilePath, progress: "已完成 70%" });
+      this.saveCurrent({ audioPath: res.tempFilePath, progress: "已完成 70%", progressPercent: 70 });
       this.clearTimer();
       this.setData({ recording: false, recordText: "已保存原声" });
     };
@@ -55,6 +58,7 @@ Page({
       mediaType: this.data.mediaType,
       mediaPath: this.data.mediaPath,
       progress: this.data.text ? "已完成 60%" : "草稿 30%",
+      progressPercent: this.data.text ? 60 : 30,
       ...extra
     };
     memoryStore.saveMemory(next);
@@ -69,8 +73,9 @@ Page({
       success: (res) => {
         const file = res.tempFiles[0];
         const mediaType = res.type === "video" ? "video" : "image";
-        this.setData({ mediaType, mediaPath: file.tempFilePath });
-        this.saveCurrent({ mediaType, mediaPath, progress: "已完成 45%" });
+        const mediaPath = file.tempFilePath;
+        this.setData({ mediaType, mediaPath });
+        this.saveCurrent({ mediaType, mediaPath, progress: "已完成 45%", progressPercent: 45 });
       }
     });
   },
@@ -125,12 +130,8 @@ Page({
 
   goPreview() {
     const memory = this.saveCurrent();
-    if (memory.scene === "毕业") {
-      memory.title = "毕业旅行 · 2023 夏";
-    } else if (memory.location && memory.location.includes("海")) {
-      memory.title = "去海边的那天";
-    }
     memory.progress = "已完成 80%";
+    memory.progressPercent = 80;
     memoryStore.saveMemory(memory);
     wx.navigateTo({ url: `/pages/preview/preview?id=${memory.id}` });
   },

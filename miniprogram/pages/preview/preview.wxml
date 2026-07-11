@@ -2,13 +2,14 @@
   <view class="nav-row">
     <view>
       <text class="nav-title">设计你的票根</text>
+      <text class="nav-subtitle">{{sceneProfile.icon}} {{memory.scene}} · {{memory.templateName}}</text>
     </view>
     <button bindtap="goStory">预览</button>
   </view>
 
   <view class="section-label">正面票根</view>
   <view class="ticket ticket-bg">
-    <image class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />
+    <image class="ticket-art" src="{{memory.backgroundPath}}" mode="aspectFill" />
     <view class="ticket-info">
       <text class="brand">记忆票根  MEMORY TICKET</text>
       <text class="ticket-title">{{memory.title}}</text>
@@ -21,17 +22,27 @@
 
   <view class="section-label">背面预览</view>
   <view class="back-card paper-card">
-    <text class="back-title">给未来的自己</text>
+    <text class="back-title">{{sceneProfile.backTitle}}</text>
     <text class="back-copy">{{shortText}}</text>
     <view class="qr small"></view>
   </view>
 
   <view class="section-label">换一种票面</view>
   <view class="template-row">
-    <button class="template active">火车票</button>
-    <button class="template">登机牌</button>
-    <button class="template">校园卡</button>
-    <button class="template">明信片</button>
+    <button
+      wx:for="{{templates}}"
+      wx:key="key"
+      class="template {{item.key === selectedTemplate ? 'active' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="selectTemplate"
+    >
+      <image src="{{item.backgroundPath}}" mode="aspectFill" />
+      <text>{{item.name}}</text>
+    </button>
+    <button class="template custom-template {{selectedTemplate === 'custom' ? 'active' : ''}}" bindtap="chooseCustomBackground">
+      <text class="custom-plus">＋</text>
+      <text>自定义</text>
+    </button>
   </view>
 
   <button class="primary-btn" bindtap="goStory">查看扫码故事页</button>

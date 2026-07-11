@@ -1,8 +1,15 @@
 <view class="page capture-page">
   <view class="page-head">
-    <text class="title">先从一张照片开始</text>
-    <text class="subtitle">照片会帮我们想起更多细节</text>
+    <view class="scene-pill">{{sceneProfile.icon}} {{scene}}</view>
+    <text class="title">{{sceneProfile.captureTitle}}</text>
+    <text class="subtitle">{{sceneProfile.captureSubtitle}}</text>
     <text class="mark">✦</text>
+  </view>
+
+  <view class="memory-types">
+    <text>照片 / 视频</text>
+    <text>文字</text>
+    <text>原声</text>
   </view>
 
   <button class="media-box paper-card" bindtap="chooseMedia">
@@ -21,15 +28,15 @@
   <view class="form-card paper-card">
     <view class="field">
       <text>日期（可选）</text>
-      <input value="{{date}}" bindinput="onDateInput" placeholder="2023 / 07 / 18" />
+      <input value="{{date}}" bindinput="onDateInput" placeholder="{{sceneProfile.defaultDate}}" />
     </view>
     <view class="field">
       <text>地点（可选）</text>
-      <input value="{{location}}" bindinput="onLocationInput" placeholder="青岛 · 海边" />
+      <input value="{{location}}" bindinput="onLocationInput" placeholder="{{sceneProfile.defaultLocation}}" />
     </view>
     <view class="field">
-      <text>想起那天，你印象最深的是什么？</text>
-      <textarea value="{{text}}" bindinput="onTextInput" placeholder="比如：发生了什么？当时的心情？谁和你在一起？" />
+      <text>{{sceneProfile.question}}</text>
+      <textarea value="{{text}}" bindinput="onTextInput" placeholder="{{sceneProfile.textPlaceholder}}" />
     </view>
   </view>
 

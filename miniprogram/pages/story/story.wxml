@@ -7,7 +7,8 @@
   </view>
 
   <view class="ticket ticket-bg">
-    <image class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />
+    <image class="ticket-art" src="{{memory.backgroundPath}}" mode="aspectFill" />
+    <text class="brand">记忆票根 · {{memory.templateName}}</text>
     <text class="ticket-title">{{memory.title}}</text>
     <text class="ticket-meta">{{memory.date}}\n{{memory.location}}</text>
     <text class="nfc">NFC</text>
@@ -22,20 +23,18 @@
   </view>
 
   <view class="story-copy">
-    <text>{{memory.text}}</text>
+    <text>{{storyText}}</text>
   </view>
 
-  <block wx:if="{{memory.mediaType === 'video'}}">
+  <block wx:if="{{memory.mediaPath && memory.mediaType === 'video'}}">
     <video class="story-media" src="{{memory.mediaPath}}" controls></video>
   </block>
-  <block wx:else>
+  <block wx:elif="{{memory.mediaPath}}">
     <image class="story-media" src="{{memory.mediaPath}}" mode="aspectFill" />
   </block>
 
   <view class="photo-row">
-    <image src="/assets/seaside-train-ticket.png" mode="aspectFill" />
-    <image src="{{memory.mediaPath}}" mode="aspectFill" />
-    <image src="/assets/memory-tabletop.png" mode="aspectFill" />
+    <image wx:for="{{galleryPaths}}" wx:key="*this" src="{{item}}" mode="aspectFill" />
   </view>
 
   <view class="story-cta">

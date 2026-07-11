@@ -1,6 +1,72 @@
 const STORAGE_KEY = "memory_ticket_memories";
 const ACTIVE_KEY = "memory_ticket_active_id";
 
+const templateCatalog = [
+  {
+    key: "train",
+    name: "火车票",
+    tone: "海边列车",
+    backgroundPath: "/assets/seaside-train-ticket.jpg"
+  },
+  {
+    key: "boarding",
+    name: "登机牌",
+    tone: "天空远行",
+    backgroundPath: "/assets/boarding-pass-sky.jpg"
+  },
+  {
+    key: "campus",
+    name: "校园卡",
+    tone: "毕业校园",
+    backgroundPath: "/assets/campus-ticket.jpg"
+  },
+  {
+    key: "postcard",
+    name: "明信片",
+    tone: "写给某人",
+    backgroundPath: "/assets/postcard-letter.jpg"
+  }
+];
+
+const sceneProfiles = {
+  "毕业": {
+    icon: "🎓",
+    captureTitle: "先留下毕业那一天",
+    captureSubtitle: "一张照片、一段声音，就能回到那个夏天",
+    question: "毕业那天，你最舍不得哪个瞬间？",
+    textPlaceholder: "比如：拍完合照之后发生了什么？你想对当时的自己说什么？",
+    defaultTitle: "毕业旅行 · 2023 夏",
+    defaultDate: "2023 / 07 / 18",
+    defaultLocation: "青岛 · 海边",
+    defaultTemplate: "train",
+    backTitle: "给未来的自己"
+  },
+  "旅行": {
+    icon: "🧳",
+    captureTitle: "把这趟旅行收进票根",
+    captureSubtitle: "地点、路线、原声，会让故事更像真的发生过",
+    question: "这趟旅程里，你最想反复回到哪个画面？",
+    textPlaceholder: "比如：到达时的天气、路上的一句话、一个没拍下来的瞬间。",
+    defaultTitle: "去远方的那天",
+    defaultDate: "2024 / 05 / 02",
+    defaultLocation: "海边小城",
+    defaultTemplate: "boarding",
+    backTitle: "下一站，再见"
+  },
+  "一个重要的人": {
+    icon: "👥",
+    captureTitle: "写给一个重要的人",
+    captureSubtitle: "不用写长文，先留下一句话和一段原声",
+    question: "如果这张票写给 TA，你最想留下哪句话？",
+    textPlaceholder: "比如：第一次见面、一次拥抱、一句到现在还记得的话。",
+    defaultTitle: "留给 TA 的声音",
+    defaultDate: "2018.10.27",
+    defaultLocation: "第一次见面的地方",
+    defaultTemplate: "postcard",
+    backTitle: "给未来的我们"
+  }
+};
+
 const seedMemories = [
   {
     id: "mem_grad_2023",
@@ -10,10 +76,13 @@ const seedMemories = [
     title: "毕业旅行 · 2023 夏",
     text: "那天，我们从学校出发去青岛。坐在靠窗的位置，看着海一点点出现，只觉得那一刻很轻松。我们一起拍了很多照片，也聊了很多关于未来的想法。",
     mediaType: "image",
-    mediaPath: "/assets/seaside-train-ticket.png",
+    mediaPath: "/assets/seaside-train-ticket.jpg",
     audioPath: "",
     template: "train",
-    progress: "已完成 80%"
+    templateName: "火车票",
+    backgroundPath: "/assets/seaside-train-ticket.jpg",
+    progress: "已完成 80%",
+    progressPercent: 80
   },
   {
     id: "mem_first_meet",
@@ -23,10 +92,13 @@ const seedMemories = [
     title: "第一次见面",
     text: "那天我们都到得有点早，杯子里的冰块一直响。后来想起那一天，最清楚的不是聊了什么，而是终于见到彼此时的停顿。",
     mediaType: "image",
-    mediaPath: "/assets/memory-tabletop.png",
+    mediaPath: "/assets/memory-tabletop.jpg",
     audioPath: "",
     template: "postcard",
-    progress: "已完成 60%"
+    templateName: "明信片",
+    backgroundPath: "/assets/postcard-letter.jpg",
+    progress: "已完成 60%",
+    progressPercent: 60
   },
   {
     id: "mem_mom_young",
@@ -36,10 +108,13 @@ const seedMemories = [
     title: "妈妈年轻时候",
     text: "照片里的她很年轻，穿着那件浅色外套。她说那时候每天很忙，但每次下班路过河边，都会停下来吹一会儿风。",
     mediaType: "image",
-    mediaPath: "/assets/memory-tabletop.png",
+    mediaPath: "/assets/memory-tabletop.jpg",
     audioPath: "",
-    template: "sepia",
-    progress: "待补充 2 个问题"
+    template: "postcard",
+    templateName: "明信片",
+    backgroundPath: "/assets/postcard-letter.jpg",
+    progress: "待补充 2 个问题",
+    progressPercent: 35
   }
 ];
 
@@ -47,11 +122,59 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function getSceneProfile(scene) {
+  return sceneProfiles[scene] || sceneProfiles["旅行"];
+}
+
+function getTemplate(key) {
+  return templateCatalog.find((item) => item.key === key) || templateCatalog[0];
+}
+
+function listTemplates() {
+  return clone(templateCatalog);
+}
+
+function normalizeAssetPath(path) {
+  if (!path) return "";
+  return path
+    .replace("seaside-train-ticket.png", "seaside-train-ticket.jpg")
+    .replace("boarding-pass-sky.png", "boarding-pass-sky.jpg")
+    .replace("campus-ticket.png", "campus-ticket.jpg")
+    .replace("postcard-letter.png", "postcard-letter.jpg")
+    .replace("memory-tabletop.png", "memory-tabletop.jpg");
+}
+
+function normalizeMemory(memory) {
+  const profile = getSceneProfile(memory.scene);
+  const template = getTemplate(memory.template || profile.defaultTemplate);
+  const text = memory.text || "";
+  return {
+    ...memory,
+    date: memory.date || profile.defaultDate,
+    location: memory.location || profile.defaultLocation,
+    title: memory.title || profile.defaultTitle,
+    text,
+    mediaType: memory.mediaType || "image",
+    mediaPath: normalizeAssetPath(memory.mediaPath),
+    template: memory.template || profile.defaultTemplate,
+    templateName: memory.templateName || template.name,
+    backgroundPath: normalizeAssetPath(memory.backgroundPath) || template.backgroundPath,
+    customBackgroundPath: normalizeAssetPath(memory.customBackgroundPath),
+    progress: memory.progress || (text ? "已完成 60%" : "草稿 20%"),
+    progressPercent: memory.progressPercent || (text ? 60 : 20)
+  };
+}
+
 function listMemories() {
   const stored = wx.getStorageSync(STORAGE_KEY);
-  if (Array.isArray(stored) && stored.length) return stored;
-  wx.setStorageSync(STORAGE_KEY, seedMemories);
-  return clone(seedMemories);
+  if (Array.isArray(stored) && stored.length) {
+    const normalized = stored.map(normalizeMemory);
+    wx.setStorageSync(STORAGE_KEY, normalized);
+    return normalized;
+  }
+  const seeded = seedMemories.map(normalizeMemory);
+  wx.setStorageSync(STORAGE_KEY, seeded);
+  return clone(seeded);
 }
 
 function getMemory(id) {
@@ -61,31 +184,38 @@ function getMemory(id) {
 
 function saveMemory(memory) {
   const memories = listMemories();
+  const normalizedMemory = normalizeMemory(memory);
   const index = memories.findIndex((item) => item.id === memory.id);
   if (index >= 0) {
-    memories[index] = { ...memories[index], ...memory };
+    memories[index] = normalizeMemory({ ...memories[index], ...normalizedMemory });
   } else {
-    memories.unshift(memory);
+    memories.unshift(normalizedMemory);
   }
   wx.setStorageSync(STORAGE_KEY, memories);
-  wx.setStorageSync(ACTIVE_KEY, memory.id);
-  return memory;
+  wx.setStorageSync(ACTIVE_KEY, normalizedMemory.id);
+  return normalizedMemory;
 }
 
 function createMemory(scene) {
   const now = Date.now();
+  const profile = getSceneProfile(scene);
+  const template = getTemplate(profile.defaultTemplate);
   const memory = {
     id: `mem_${now}`,
     scene,
-    date: "",
-    location: "",
-    title: scene === "毕业" ? "毕业旅行 · 2023 夏" : scene === "旅行" ? "去远方的那天" : "留给 TA 的声音",
+    date: profile.defaultDate,
+    location: profile.defaultLocation,
+    title: profile.defaultTitle,
     text: "",
     mediaType: "image",
     mediaPath: "",
     audioPath: "",
-    template: "train",
-    progress: "草稿 20%"
+    template: template.key,
+    templateName: template.name,
+    backgroundPath: template.backgroundPath,
+    customBackgroundPath: "",
+    progress: "草稿 20%",
+    progressPercent: 20
   };
   return saveMemory(memory);
 }
@@ -104,5 +234,8 @@ module.exports = {
   saveMemory,
   createMemory,
   setActiveMemoryId,
-  getActiveMemoryId
+  getActiveMemoryId,
+  getSceneProfile,
+  listTemplates,
+  getTemplate
 };

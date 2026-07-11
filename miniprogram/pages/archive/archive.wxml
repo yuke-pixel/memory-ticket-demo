@@ -11,23 +11,23 @@
     <view
       wx:for="{{memories}}"
       wx:key="id"
-      class="archive-ticket {{index === 0 ? 'ticket-bg' : index === 1 ? 'light-ticket' : 'sepia-ticket'}}"
+      class="archive-ticket ticket-bg"
       data-id="{{item.id}}"
       bindtap="openStory"
     >
-      <image wx:if="{{index === 0}}" class="ticket-art" src="/assets/seaside-train-ticket.png" mode="aspectFill" />
+      <image class="ticket-art" src="{{item.backgroundPath}}" mode="aspectFill" />
       <view class="ticket-content">
-        <text class="ticket-kicker">{{item.scene}} · {{item.template}}</text>
+        <text class="ticket-kicker">{{item.scene}} · {{item.templateName}}</text>
         <text class="ticket-title">{{item.title}}</text>
         <text class="ticket-meta">{{item.date || '日期待补充'}} · {{item.location || '地点待补充'}}</text>
         <view class="progress-line">
-          <view class="progress-bar" style="width: {{index === 0 ? 80 : index === 1 ? 60 : 35}}%;"></view>
+          <view class="progress-bar" style="width: {{item.progressPercent}}%;"></view>
         </view>
         <text class="ticket-progress">{{item.progress}}</text>
       </view>
       <view class="ticket-actions">
         <button catchtap="editMemory" data-id="{{item.id}}">编辑</button>
-        <view wx:if="{{index === 0}}" class="nfc">NFC</view>
+        <view wx:if="{{item.template === 'train' || item.template === 'boarding'}}" class="nfc">NFC</view>
         <view wx:else class="qr-mini"></view>
       </view>
     </view>

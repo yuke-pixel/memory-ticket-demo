@@ -4,6 +4,9 @@ Page({
   data: {
     id: "",
     memory: {},
+    sceneProfile: {},
+    storyText: "",
+    galleryPaths: [],
     playing: false
   },
 
@@ -14,7 +17,14 @@ Page({
 
   onShow() {
     const memory = memoryStore.getMemory(this.data.id || memoryStore.getActiveMemoryId());
-    this.setData({ memory });
+    const sceneProfile = memoryStore.getSceneProfile(memory.scene);
+    const storyText = memory.text || `这张票根还在继续补充。${sceneProfile.question}`;
+    const galleryPaths = [
+      memory.mediaPath,
+      memory.backgroundPath,
+      "/assets/memory-tabletop.jpg"
+    ].filter((path, index, array) => path && array.indexOf(path) === index);
+    this.setData({ memory, sceneProfile, storyText, galleryPaths });
     if (this.audio) {
       this.audio.destroy();
       this.audio = null;
