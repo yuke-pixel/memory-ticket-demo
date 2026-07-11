@@ -1,6 +1,6 @@
 .home-page {
   min-height: 100vh;
-  padding: 40rpx 34rpx 44rpx;
+  padding: 40rpx 20rpx 44rpx;
   background: #f9f5ee;
   overflow: hidden;
 }
@@ -73,6 +73,7 @@
 
 .intro-copy {
   margin-top: 34rpx;
+  padding: 0 2rpx;
 }
 
 .eyebrow {
@@ -97,15 +98,36 @@
 
 .intro-desc {
   display: block;
-  width: 660rpx;
+  width: 100%;
   margin-top: 18rpx;
   color: #718192;
   font-size: 28rpx;
   line-height: 1.65;
 }
 
+.trust-row {
+  margin-top: 24rpx;
+  display: flex;
+  gap: 16rpx;
+}
+
+.trust-row text {
+  flex: 1;
+  height: 58rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #dfd2bf;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.66);
+  color: #3c7896;
+  font-size: 22rpx;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .choice-list {
-  margin-top: 32rpx;
+  margin-top: 26rpx;
   display: flex;
   flex-direction: column;
   gap: 20rpx;
@@ -113,8 +135,8 @@
 
 .choice {
   width: 100%;
-  min-height: 132rpx;
-  padding: 28rpx 30rpx 26rpx;
+  min-height: 128rpx;
+  padding: 26rpx 28rpx 24rpx;
   display: flex;
   align-items: center;
   gap: 24rpx;
@@ -130,8 +152,8 @@
 }
 
 .choice-icon {
-  width: 72rpx;
-  height: 72rpx;
+  width: 70rpx;
+  height: 70rpx;
   display: flex;
   align-items: center;
   justify-content: center;

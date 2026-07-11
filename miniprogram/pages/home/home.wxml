@@ -18,6 +18,12 @@
     <text class="intro-desc">给一张照片、一段声音、一个日期，AI 帮你整理成能听见的票。</text>
   </view>
 
+  <view class="trust-row">
+    <text>默认私密</text>
+    <text>保留原声</text>
+    <text>可做实体</text>
+  </view>
+
   <view class="choice-list">
     <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
       <text class="choice-icon tan">🧳</text>
