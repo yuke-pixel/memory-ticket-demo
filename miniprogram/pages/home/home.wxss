@@ -59,6 +59,8 @@
 
 .choice-list {
   margin-top: 62rpx;
+  margin-left: -8rpx;
+  margin-right: -8rpx;
   display: flex;
   flex-direction: column;
   gap: 38rpx;
@@ -66,7 +68,7 @@
 
 .choice {
   height: 142rpx;
-  padding: 0 34rpx;
+  padding: 0 52rpx 0 34rpx;
   display: flex;
   align-items: center;
   gap: 26rpx;
