@@ -1,35 +1,44 @@
 .home-page {
   min-height: 100vh;
-  padding: 42rpx 26rpx 44rpx;
+  padding: 40rpx 34rpx 44rpx;
   background: #f9f5ee;
   overflow: hidden;
 }
 
-.home-photo-card {
-  position: relative;
-  height: 500rpx;
-  overflow: hidden;
-  border-radius: 28rpx;
-  background: #fffaf3;
-  box-shadow: 0 18rpx 36rpx rgba(83, 70, 54, 0.1);
-}
-
-.prompt-wrap {
-  position: relative;
-  z-index: 1;
-  height: 96rpx;
+.top-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 250, 243, 0.88);
+  gap: 10rpx;
+}
+
+.top-brand {
+  color: #1f2a33;
+  font-size: 32rpx;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.top-subtitle {
+  color: #8a8172;
+  font-size: 22rpx;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hero-title-block {
+  margin-top: 72rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .brand-title {
   display: block;
   color: #1f2a33;
-  font-size: 34rpx;
-  font-weight: 800;
+  font-size: 48rpx;
+  font-weight: 500;
   line-height: 1;
   white-space: nowrap;
 }
@@ -38,20 +47,28 @@
   display: block;
   margin-top: 10rpx;
   color: #7f8b96;
-  font-size: 20rpx;
+  font-size: 23rpx;
   line-height: 1;
   white-space: nowrap;
 }
 
+.hero-mark {
+  display: block;
+  margin-top: 20rpx;
+  color: #d5a94f;
+  font-size: 26rpx;
+  line-height: 1;
+  letter-spacing: 6rpx;
+}
+
 .home-photo {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: block;
   width: 100%;
-  height: 404rpx;
+  height: 328rpx;
+  margin-top: 32rpx;
+  border-radius: 28rpx;
   background: #efe4d7;
+  box-shadow: 0 18rpx 36rpx rgba(83, 70, 54, 0.1);
 }
 
 .intro-copy {
@@ -89,8 +106,6 @@
 
 .choice-list {
   margin-top: 32rpx;
-  margin-left: -18rpx;
-  margin-right: -18rpx;
   display: flex;
   flex-direction: column;
   gap: 20rpx;
@@ -99,7 +114,7 @@
 .choice {
   width: 100%;
   min-height: 132rpx;
-  padding: 28rpx 36rpx 26rpx;
+  padding: 28rpx 30rpx 26rpx;
   display: flex;
   align-items: center;
   gap: 24rpx;
