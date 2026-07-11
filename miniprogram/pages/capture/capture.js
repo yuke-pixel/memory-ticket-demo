@@ -11,6 +11,8 @@ Page({
     mediaPath: "",
     scene: "",
     sceneProfile: {},
+    activeInput: "media",
+    aiInterviewEnabled: true,
     recording: false,
     recordText: "00:00",
     recordStartedAt: 0,
@@ -46,6 +48,14 @@ Page({
 
     recorder.onStop(this.onRecorderStop);
     recorder.onError(this.onRecorderError);
+  },
+
+  switchInput(event) {
+    this.setData({ activeInput: event.currentTarget.dataset.mode });
+  },
+
+  toggleInterview() {
+    this.setData({ aiInterviewEnabled: !this.data.aiInterviewEnabled });
   },
 
   saveCurrent(extra = {}) {

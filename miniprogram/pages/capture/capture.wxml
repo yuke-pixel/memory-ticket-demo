@@ -1,50 +1,88 @@
 <view class="page capture-page">
+  <view class="mini-nav">
+    <text>记忆票根</text>
+    <text>给值得留下的一刻</text>
+  </view>
+
   <view class="page-head">
-    <view class="scene-pill">{{sceneProfile.icon}} {{scene}}</view>
-    <text class="title">{{sceneProfile.captureTitle}}</text>
-    <text class="subtitle">{{sceneProfile.captureSubtitle}}</text>
-    <text class="mark">✦</text>
+    <text class="eyebrow">COLLECT</text>
+    <text class="title">先给一个记忆线索</text>
+    <text class="subtitle">照片、视频、文字和语音都可以。每次只回答一个问题。</text>
   </view>
 
-  <view class="memory-types">
-    <text>照片 / 视频</text>
-    <text>文字</text>
-    <text>原声</text>
+  <view class="input-tabs">
+    <button class="{{activeInput === 'media' ? 'active' : ''}}" data-mode="media" bindtap="switchInput">照片 / 视频</button>
+    <button class="{{activeInput === 'text' ? 'active' : ''}}" data-mode="text" bindtap="switchInput">文字</button>
+    <button class="{{activeInput === 'voice' ? 'active' : ''}}" data-mode="voice" bindtap="switchInput">语音</button>
   </view>
 
-  <button class="media-box paper-card" bindtap="chooseMedia">
-    <block wx:if="{{mediaType === 'video'}}">
-      <video class="media-preview" src="{{mediaPath}}" controls></video>
+  <view class="collect-card paper-card">
+    <block wx:if="{{activeInput === 'media'}}">
+      <view class="media-thumb" bindtap="chooseMedia">
+        <block wx:if="{{mediaType === 'video' && mediaPath}}">
+          <video class="media-preview" src="{{mediaPath}}" controls></video>
+        </block>
+        <block wx:elif="{{mediaPath}}">
+          <image class="media-preview" src="{{mediaPath}}" mode="aspectFill" />
+        </block>
+        <block wx:else>
+          <image class="media-preview" src="/assets/home-keepsake.jpg" mode="aspectFill" />
+          <text class="media-status">添加照片 / 视频</text>
+        </block>
+      </view>
+
+      <view class="meta-fields">
+        <view class="field compact">
+          <text>日期</text>
+          <input value="{{date}}" bindinput="onDateInput" placeholder="{{sceneProfile.defaultDate}}" />
+        </view>
+        <view class="field compact">
+          <text>地点</text>
+          <input value="{{location}}" bindinput="onLocationInput" placeholder="{{sceneProfile.defaultLocation}}" />
+        </view>
+      </view>
     </block>
-    <block wx:elif="{{mediaPath}}">
-      <image class="media-preview" src="{{mediaPath}}" mode="aspectFill" />
+
+    <block wx:elif="{{activeInput === 'text'}}">
+      <view class="text-panel">
+        <text class="panel-question">{{sceneProfile.question}}</text>
+        <textarea value="{{text}}" bindinput="onTextInput" placeholder="{{sceneProfile.textPlaceholder}}" />
+      </view>
     </block>
+
     <block wx:else>
-      <text class="plus">＋</text>
-      <text class="add-copy">添加照片 / 视频</text>
+      <view class="voice-panel">
+        <text class="panel-question">先用声音讲一小段</text>
+        <text class="voice-copy">不用整理语言，AI 会从你的原声里提炼标题、短句和故事页。</text>
+        <button class="record-btn {{recording ? 'recording' : ''}}" bindtap="toggleRecord">●</button>
+        <text class="record-time">{{recordText}}</text>
+      </view>
     </block>
-  </button>
-
-  <view class="form-card paper-card">
-    <view class="field">
-      <text>日期（可选）</text>
-      <input value="{{date}}" bindinput="onDateInput" placeholder="{{sceneProfile.defaultDate}}" />
-    </view>
-    <view class="field">
-      <text>地点（可选）</text>
-      <input value="{{location}}" bindinput="onLocationInput" placeholder="{{sceneProfile.defaultLocation}}" />
-    </view>
-    <view class="field">
-      <text>{{sceneProfile.question}}</text>
-      <textarea value="{{text}}" bindinput="onTextInput" placeholder="{{sceneProfile.textPlaceholder}}" />
-    </view>
   </view>
 
-  <view class="record-area">
-    <text class="wave-line">︶ ︶ ︶</text>
-    <text class="record-time">{{recordText}}</text>
-    <button class="record-btn {{recording ? 'recording' : ''}}" bindtap="toggleRecord">🎙</button>
-    <text class="record-hint">按住这段声音</text>
+  <view class="ai-card paper-card {{aiInterviewEnabled ? '' : 'disabled'}}">
+    <view class="ai-head">
+      <view>
+        <text class="ai-badge">AI 轻访谈</text>
+        <text class="ai-subtitle">{{aiInterviewEnabled ? '一次只问一个问题' : '已关闭，可随时打开'}}</text>
+      </view>
+      <button class="toggle-btn {{aiInterviewEnabled ? 'on' : ''}}" bindtap="toggleInterview">
+        <text>{{aiInterviewEnabled ? '开' : '关'}}</text>
+      </button>
+    </view>
+
+    <block wx:if="{{aiInterviewEnabled}}">
+      <text class="interview-question">{{sceneProfile.question}}</text>
+      <textarea class="interview-answer" value="{{text}}" bindinput="onTextInput" placeholder="{{sceneProfile.textPlaceholder}}" />
+
+      <button class="audio-strip" bindtap="toggleRecord">
+        <text class="audio-dot {{recording ? 'recording' : ''}}"></text>
+        <view>
+          <text class="audio-title">{{recording ? '正在记录原声' : recordText}}</text>
+          <text class="audio-note">会保留在私密故事页</text>
+        </view>
+      </button>
+    </block>
   </view>
 
   <button class="primary-btn" bindtap="goPreview">生成票根</button>
