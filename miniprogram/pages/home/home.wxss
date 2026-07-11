@@ -59,8 +59,8 @@
 
 .choice-list {
   margin-top: 52rpx;
-  margin-left: -8rpx;
-  margin-right: -8rpx;
+  margin-left: -83rpx;
+  margin-right: -83rpx;
   display: flex;
   flex-direction: column;
   gap: 30rpx;
