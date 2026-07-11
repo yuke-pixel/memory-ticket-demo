@@ -32,6 +32,13 @@
         <text class="choice-desc">写给 TA，也留给未来的自己</text>
       </view>
     </button>
+    <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
+      <text class="choice-icon soft">✦</text>
+      <view class="choice-text">
+        <text class="choice-title">其他</text>
+        <text class="choice-desc">从一张照片或一句话开始</text>
+      </view>
+    </button>
   </view>
 
   <view class="bottom-wave">⌁</view>

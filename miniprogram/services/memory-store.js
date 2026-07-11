@@ -64,6 +64,18 @@ const sceneProfiles = {
     defaultLocation: "第一次见面的地方",
     defaultTemplate: "postcard",
     backTitle: "给未来的我们"
+  },
+  "其他": {
+    icon: "✦",
+    captureTitle: "从一个瞬间开始",
+    captureSubtitle: "先不用分类，照片、文字和原声会把记忆慢慢带出来",
+    question: "这个瞬间里，你最想先留下什么？",
+    textPlaceholder: "比如：一个地点、一句话、一张旧照片，或者当时突然冒出来的心情。",
+    defaultTitle: "想留下的这一刻",
+    defaultDate: "今天",
+    defaultLocation: "某个重要的地方",
+    defaultTemplate: "postcard",
+    backTitle: "写给以后的自己"
   }
 };
 

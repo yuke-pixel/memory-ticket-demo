@@ -1,6 +1,6 @@
 .home-page {
   min-height: 100vh;
-  padding-top: 104rpx;
+  padding-top: 86rpx;
   padding-left: 28rpx;
   padding-right: 18rpx;
 }
@@ -36,7 +36,7 @@
 }
 
 .memory-line {
-  margin-top: 42rpx;
+  margin-top: 36rpx;
   text-align: center;
 }
 
@@ -58,12 +58,12 @@
 }
 
 .choice-list {
-  margin-top: 62rpx;
+  margin-top: 52rpx;
   margin-left: -8rpx;
   margin-right: -8rpx;
   display: flex;
   flex-direction: column;
-  gap: 38rpx;
+  gap: 30rpx;
 }
 
 .choice {
@@ -97,6 +97,11 @@
 
 .choice-icon.gray {
   background: #e8e3dc;
+}
+
+.choice-icon.soft {
+  background: #f3eadf;
+  color: #d5a94f;
 }
 
 .choice-title {
