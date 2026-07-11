@@ -14,24 +14,28 @@
 
   <view class="choice-list">
     <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
+      <text class="choice-icon tan">🧳</text>
       <view class="choice-text">
         <text class="choice-title">一次旅行</text>
         <text class="choice-desc">把路上的某一天做成登机牌或车票</text>
       </view>
     </button>
     <button class="choice paper-card" data-scene="毕业" bindtap="chooseScene">
+      <text class="choice-icon blue">🎓</text>
       <view class="choice-text">
         <text class="choice-title">一个毕业季</text>
         <text class="choice-desc">留下同学、教室、操场和告别那天</text>
       </view>
     </button>
     <button class="choice paper-card" data-scene="一个重要的人" bindtap="chooseScene">
+      <text class="choice-icon gray">👥</text>
       <view class="choice-text">
         <text class="choice-title">一个重要的人</text>
         <text class="choice-desc">把 TA 的声音和老照片放进一张票根</text>
       </view>
     </button>
     <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
+      <text class="choice-icon soft">＋</text>
       <view class="choice-text">
         <text class="choice-title">其他回忆</text>
         <text class="choice-desc">留住那些说不清的瞬间</text>

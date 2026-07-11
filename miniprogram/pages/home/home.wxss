@@ -74,6 +74,8 @@
 
 .choice-list {
   margin-top: 32rpx;
+  margin-left: -18rpx;
+  margin-right: -18rpx;
   display: flex;
   flex-direction: column;
   gap: 20rpx;
@@ -82,9 +84,10 @@
 .choice {
   width: 100%;
   min-height: 132rpx;
-  padding: 28rpx 32rpx 26rpx;
+  padding: 28rpx 36rpx 26rpx;
   display: flex;
   align-items: center;
+  gap: 24rpx;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
   background: rgba(255, 255, 255, 0.7);
@@ -96,8 +99,37 @@
   background: rgba(255, 251, 247, 0.88);
 }
 
+.choice-icon {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18rpx;
+  font-size: 38rpx;
+  flex-shrink: 0;
+}
+
+.choice-icon.tan {
+  background: #efe1cf;
+}
+
+.choice-icon.blue {
+  background: #dcebf1;
+}
+
+.choice-icon.gray {
+  background: #e8e3dc;
+}
+
+.choice-icon.soft {
+  background: #eef1e7;
+  color: #7f8f72;
+}
+
 .choice-text {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 }
 
 .choice-title {
