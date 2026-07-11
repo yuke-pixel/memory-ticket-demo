@@ -36,9 +36,9 @@
 
 .prompt {
   display: block;
-  margin-top: 12rpx;
+  margin-top: 10rpx;
   color: #7f8b96;
-  font-size: 22rpx;
+  font-size: 20rpx;
   line-height: 1;
   white-space: nowrap;
 }

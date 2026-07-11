@@ -3,7 +3,7 @@
     <image class="home-photo" src="/assets/home-keepsake.jpg" mode="aspectFill" />
     <view class="prompt-wrap">
       <text class="brand-title">记忆票根</text>
-      <text class="prompt">给值得留下的一刻</text>
+      <text class="prompt">写给值得留下的那一刻，留一张能看见的票</text>
     </view>
   </view>
 
@@ -38,7 +38,7 @@
     <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
       <text class="choice-icon soft">＋</text>
       <view class="choice-text">
-        <text class="choice-title">其他回忆</text>
+        <text class="choice-title">其他</text>
         <text class="choice-desc">留住那些说不清的瞬间</text>
       </view>
     </button>
