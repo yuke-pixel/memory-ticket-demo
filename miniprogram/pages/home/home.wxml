@@ -5,14 +5,9 @@
     <text class="brand-mark">✦ ︶ ︶ ︶</text>
   </view>
 
-  <view class="hero-ticket ticket-bg">
-    <image class="ticket-art" src="/assets/seaside-train-ticket.jpg" mode="aspectFill" />
-    <view class="hero-copy">
-      <text class="hero-kicker">MEMORY TICKET</text>
-      <text class="hero-title">给值得留下的一刻，留一张能听见的票</text>
-      <text class="hero-meta">照片 · 文字 · 原声</text>
-    </view>
-    <view class="hero-qr"></view>
+  <view class="memory-line">
+    <text class="memory-title">给值得留下的一刻，留一张能听见的票</text>
+    <text class="memory-meta">照片 · 文字 · 原声</text>
   </view>
 
   <view class="choice-list">

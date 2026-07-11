@@ -1,8 +1,8 @@
 .home-page {
   min-height: 100vh;
-  padding-top: 78rpx;
+  padding-top: 104rpx;
   padding-left: 28rpx;
-  padding-right: 28rpx;
+  padding-right: 18rpx;
 }
 
 .prompt-wrap {
@@ -35,92 +35,33 @@
   font-size: 34rpx;
 }
 
-.hero-ticket {
-  position: relative;
-  height: 236rpx;
-  margin-top: 34rpx;
-  padding: 28rpx 30rpx;
-  overflow: hidden;
-  border: 1rpx solid #dfd2bf;
-  border-radius: 18rpx;
-  box-shadow: 0 18rpx 34rpx rgba(83, 70, 54, 0.12);
+.memory-line {
+  margin-top: 42rpx;
+  text-align: center;
 }
 
-.hero-ticket::before {
-  content: "";
-  position: absolute;
-  top: -16rpx;
-  right: 122rpx;
-  width: 32rpx;
-  height: 32rpx;
-  border-radius: 50%;
-  background: #f9f5ee;
-  box-shadow: 0 236rpx 0 #f9f5ee;
-  z-index: 2;
-}
-
-.hero-ticket::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 138rpx;
-  bottom: 0;
-  border-left: 2rpx dashed rgba(138, 129, 114, 0.45);
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 1;
-  width: 500rpx;
-}
-
-.hero-kicker {
+.memory-title {
   display: block;
-  color: #5d91ad;
-  font-size: 20rpx;
-  font-weight: 800;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.hero-title {
-  display: block;
-  margin-top: 24rpx;
-  color: #2b2924;
-  font-size: 28rpx;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.hero-meta {
-  display: block;
-  margin-top: 20rpx;
   color: #756c60;
+  font-size: 26rpx;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.memory-meta {
+  display: block;
+  margin-top: 22rpx;
+  color: #5d91ad;
   font-size: 22rpx;
   line-height: 1;
   white-space: nowrap;
 }
 
-.hero-qr {
-  position: absolute;
-  z-index: 1;
-  right: 34rpx;
-  bottom: 30rpx;
-  width: 62rpx;
-  height: 62rpx;
-  border: 6rpx solid #fff;
-  border-radius: 8rpx;
-  background:
-    linear-gradient(90deg, #2b2924 10rpx, transparent 0) 0 0 / 20rpx 20rpx,
-    linear-gradient(#2b2924 10rpx, transparent 0) 0 0 / 20rpx 20rpx,
-    #f7f2e9;
-}
-
 .choice-list {
-  margin-top: 34rpx;
+  margin-top: 62rpx;
   display: flex;
   flex-direction: column;
-  gap: 24rpx;
+  gap: 38rpx;
 }
 
 .choice {
