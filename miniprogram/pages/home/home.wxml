@@ -1,53 +1,41 @@
 <view class="page home-page">
-  <view class="decor decor-left">✦</view>
-  <view class="decor decor-right">︶ ︶</view>
   <view class="prompt-wrap">
     <text class="brand-title">记忆票根</text>
-    <text class="prompt">你想留下什么回忆？</text>
-    <text class="brand-mark">✦ ︶ ︶ ︶</text>
+    <text class="prompt">给值得留下的一刻</text>
   </view>
 
-  <view class="memory-line">
-    <text class="memory-title">给值得留下的一刻，留一张能听见的票</text>
-    <text class="memory-meta">照片 · 文字 · 原声</text>
+  <image class="home-photo" src="/assets/home-keepsake.jpg" mode="aspectFill" />
+
+  <view class="intro-copy">
+    <text class="eyebrow">MEMORY TICKET</text>
+    <text class="intro-title">你想留下什么回忆？</text>
+    <text class="intro-desc">给一张照片、一段声音、一个日期，AI 帮你整理成能听见的票。</text>
   </view>
 
   <view class="choice-list">
-    <button class="choice paper-card" data-scene="毕业" bindtap="chooseScene">
-      <text class="choice-icon blue">🎓</text>
+    <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
       <view class="choice-text">
-        <text class="choice-title">毕业</text>
-        <text class="choice-desc">把那个夏天做成一张票</text>
+        <text class="choice-title">一次旅行</text>
+        <text class="choice-desc">把路上的某一天做成登机牌或车票</text>
       </view>
     </button>
-    <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
-      <text class="choice-icon tan">🧳</text>
+    <button class="choice paper-card" data-scene="毕业" bindtap="chooseScene">
       <view class="choice-text">
-        <text class="choice-title">旅行</text>
-        <text class="choice-desc">留下路线、地点和路上的声音</text>
+        <text class="choice-title">一个毕业季</text>
+        <text class="choice-desc">留下同学、教室、操场和告别那天</text>
       </view>
     </button>
     <button class="choice paper-card" data-scene="一个重要的人" bindtap="chooseScene">
-      <text class="choice-icon gray">👥</text>
       <view class="choice-text">
         <text class="choice-title">一个重要的人</text>
-        <text class="choice-desc">写给 TA，也留给未来的自己</text>
+        <text class="choice-desc">把 TA 的声音和老照片放进一张票根</text>
       </view>
     </button>
     <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
-      <text class="choice-icon soft">＋</text>
       <view class="choice-text">
-        <text class="choice-title">其他</text>
+        <text class="choice-title">其他回忆</text>
         <text class="choice-desc">留住那些说不清的瞬间</text>
       </view>
     </button>
   </view>
-
-  <view class="paper-trim">
-    <text></text>
-    <text></text>
-    <text></text>
-  </view>
-
-  <view class="bottom-wave">⌁</view>
 </view>

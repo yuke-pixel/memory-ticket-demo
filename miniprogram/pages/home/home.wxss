@@ -1,36 +1,11 @@
 .home-page {
-  position: relative;
   min-height: 100vh;
-  padding-top: 86rpx;
-  padding-left: 28rpx;
-  padding-right: 18rpx;
+  padding: 42rpx 26rpx 44rpx;
+  background: #f9f5ee;
   overflow: hidden;
 }
 
-.decor {
-  position: absolute;
-  z-index: 0;
-  color: rgba(213, 169, 79, 0.72);
-  pointer-events: none;
-}
-
-.decor-left {
-  left: 54rpx;
-  top: 126rpx;
-  font-size: 34rpx;
-}
-
-.decor-right {
-  right: 42rpx;
-  top: 156rpx;
-  color: rgba(93, 145, 173, 0.58);
-  font-size: 30rpx;
-  letter-spacing: 8rpx;
-}
-
 .prompt-wrap {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,149 +13,107 @@
 
 .brand-title {
   display: block;
-  color: #2b2924;
-  font-size: 46rpx;
+  color: #1f2a33;
+  font-size: 34rpx;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: 2rpx;
+  white-space: nowrap;
 }
 
 .prompt {
   display: block;
-  margin-top: 24rpx;
-  color: #2b2924;
-  font-size: 34rpx;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.brand-mark {
-  display: block;
-  margin-top: 22rpx;
-  color: #e4bd62;
-  font-size: 34rpx;
-}
-
-.memory-line {
-  margin-top: 36rpx;
-  text-align: center;
-}
-
-.memory-title {
-  display: block;
-  color: #756c60;
-  font-size: 26rpx;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.memory-meta {
-  display: block;
-  margin-top: 22rpx;
-  color: #5d91ad;
+  margin-top: 12rpx;
+  color: #7f8b96;
   font-size: 22rpx;
   line-height: 1;
   white-space: nowrap;
 }
 
+.home-photo {
+  display: block;
+  width: 100%;
+  height: 432rpx;
+  margin-top: 38rpx;
+  border-radius: 28rpx;
+  background: #efe4d7;
+  box-shadow: 0 18rpx 36rpx rgba(83, 70, 54, 0.1);
+}
+
+.intro-copy {
+  margin-top: 34rpx;
+}
+
+.eyebrow {
+  display: block;
+  color: #d85f4f;
+  font-size: 20rpx;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1rpx;
+  white-space: nowrap;
+}
+
+.intro-title {
+  display: block;
+  margin-top: 20rpx;
+  color: #1f2a33;
+  font-size: 52rpx;
+  font-weight: 900;
+  line-height: 1.12;
+  white-space: nowrap;
+}
+
+.intro-desc {
+  display: block;
+  width: 660rpx;
+  margin-top: 18rpx;
+  color: #718192;
+  font-size: 28rpx;
+  line-height: 1.65;
+}
+
 .choice-list {
-  margin-top: 52rpx;
-  margin-left: -233rpx;
-  margin-right: -233rpx;
+  margin-top: 32rpx;
   display: flex;
   flex-direction: column;
-  gap: 30rpx;
+  gap: 20rpx;
 }
 
 .choice {
-  position: relative;
-  height: 142rpx;
-  padding: 0 233rpx;
+  width: 100%;
+  min-height: 132rpx;
+  padding: 28rpx 32rpx 26rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 26rpx;
-  border-radius: 18rpx;
-  box-shadow: 0 18rpx 34rpx rgba(83, 70, 54, 0.1);
+  border: 1rpx solid #dfd2bf;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 14rpx 30rpx rgba(83, 70, 54, 0.07);
 }
 
-.choice::after {
-  content: "";
-  position: absolute;
-  top: 20rpx;
-  right: 164rpx;
-  bottom: 20rpx;
-  border-left: 1rpx dashed rgba(138, 129, 114, 0.22);
+.choice:first-child {
+  border-color: #e69082;
+  background: rgba(255, 251, 247, 0.88);
 }
 
-.choice-icon {
-  width: 88rpx;
-  height: 88rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 22rpx;
-  font-size: 50rpx;
-  flex-shrink: 0;
-}
-
-.choice-icon.blue {
-  background: #dcebf1;
-}
-
-.choice-icon.tan {
-  background: #efe1cf;
-}
-
-.choice-icon.gray {
-  background: #e8e3dc;
-}
-
-.choice-icon.soft {
-  background: #eef1e7;
-  color: #7f8f72;
+.choice-text {
+  width: 100%;
 }
 
 .choice-title {
   display: block;
-  color: #2b2924;
+  color: #14191f;
   font-size: 30rpx;
+  font-weight: 900;
   line-height: 1;
   white-space: nowrap;
-}
-
-.choice-text {
-  position: relative;
-  z-index: 1;
-  width: 360rpx;
-  flex: 0 0 360rpx;
 }
 
 .choice-desc {
   display: block;
-  margin-top: 16rpx;
-  color: #8a8172;
-  font-size: 22rpx;
+  margin-top: 18rpx;
+  color: #718192;
+  font-size: 24rpx;
   line-height: 1;
   white-space: nowrap;
-}
-
-.paper-trim {
-  margin: 34rpx auto 0;
-  width: 190rpx;
-  display: flex;
-  justify-content: space-between;
-}
-
-.paper-trim text {
-  width: 34rpx;
-  height: 8rpx;
-  border-radius: 999rpx;
-  background: rgba(143, 178, 196, 0.5);
-}
-
-.bottom-wave {
-  margin-top: 22rpx;
-  color: #8fb2c4;
-  text-align: center;
-  font-size: 34rpx;
 }
