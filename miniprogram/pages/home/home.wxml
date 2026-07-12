@@ -1,9 +1,4 @@
 <view class="page home-page">
-  <view class="top-title">
-    <text class="top-brand">记忆票根</text>
-    <text class="top-subtitle">给值得留下的一刻</text>
-  </view>
-
   <image class="home-photo" src="/assets/home-keepsake.jpg" mode="aspectFill" />
 
   <view class="intro-copy">

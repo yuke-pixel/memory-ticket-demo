@@ -1,37 +1,15 @@
 .home-page {
   min-height: 100vh;
-  padding: 40rpx 20rpx 44rpx;
+  padding: 12rpx 20rpx 44rpx;
   background: #f9f5ee;
   overflow-x: hidden;
-}
-
-.top-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10rpx;
-}
-
-.top-brand {
-  color: #1f2a33;
-  font-size: 32rpx;
-  font-weight: 900;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.top-subtitle {
-  color: #8a8172;
-  font-size: 22rpx;
-  line-height: 1;
-  white-space: nowrap;
 }
 
 .home-photo {
   display: block;
   width: 100%;
   height: 328rpx;
-  margin-top: 34rpx;
+  margin-top: 0;
   border-radius: 28rpx;
   background: #efe4d7;
   box-shadow: 0 18rpx 36rpx rgba(83, 70, 54, 0.1);
@@ -103,11 +81,11 @@
 
 .choice {
   width: 100%;
-  min-height: 128rpx;
+  min-height: 144rpx;
   padding: 26rpx 278rpx 24rpx;
   display: flex;
   align-items: center;
-  gap: 24rpx;
+  gap: 28rpx;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
   background: rgba(255, 255, 255, 0.7);
@@ -120,13 +98,13 @@
 }
 
 .choice-icon {
-  width: 70rpx;
-  height: 70rpx;
+  width: 88rpx;
+  height: 88rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 18rpx;
-  font-size: 38rpx;
+  border-radius: 22rpx;
+  font-size: 48rpx;
   flex-shrink: 0;
 }
 
@@ -159,6 +137,8 @@
   font-weight: 900;
   line-height: 1;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .choice-desc {
@@ -168,4 +148,6 @@
   font-size: 24rpx;
   line-height: 1;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
