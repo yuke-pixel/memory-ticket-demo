@@ -4,12 +4,6 @@
     <text class="top-subtitle">给值得留下的一刻</text>
   </view>
 
-  <view class="hero-title-block">
-    <text class="brand-title">记忆票根</text>
-    <text class="prompt">写给值得留下的那一刻，留一张能看见的票</text>
-    <text class="hero-mark">✦ ︶ ︶ ︶</text>
-  </view>
-
   <image class="home-photo" src="/assets/home-keepsake.jpg" mode="aspectFill" />
 
   <view class="intro-copy">
