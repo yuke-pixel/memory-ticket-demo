@@ -38,7 +38,7 @@
       </view>
     </button>
     <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
-      <text class="choice-icon soft">＋</text>
+      <text class="choice-icon soft">🖼️</text>
       <view class="choice-text">
         <text class="choice-title">其他</text>
         <text class="choice-desc">留住那些说不清的瞬间</text>
