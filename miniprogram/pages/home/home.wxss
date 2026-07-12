@@ -1,8 +1,17 @@
 .home-page {
   min-height: 100vh;
-  padding: 12rpx 20rpx 44rpx;
+  padding: 10rpx 18rpx 44rpx;
   background: #f9f5ee;
   overflow-x: hidden;
+}
+
+.nav-subtitle {
+  margin-bottom: 18rpx;
+  color: #8a8172;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .home-photo {
@@ -72,8 +81,6 @@
 
 .choice-list {
   margin-top: 26rpx;
-  margin-left: -250rpx;
-  margin-right: -250rpx;
   display: flex;
   flex-direction: column;
   gap: 20rpx;
@@ -82,10 +89,10 @@
 .choice {
   width: 100%;
   min-height: 144rpx;
-  padding: 26rpx 278rpx 24rpx;
+  padding: 26rpx 30rpx 24rpx;
   display: flex;
   align-items: center;
-  gap: 28rpx;
+  gap: 26rpx;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
   background: rgba(255, 255, 255, 0.7);
@@ -98,13 +105,13 @@
 }
 
 .choice-icon {
-  width: 88rpx;
-  height: 88rpx;
+  width: 86rpx;
+  height: 86rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 22rpx;
-  font-size: 48rpx;
+  font-size: 46rpx;
   flex-shrink: 0;
 }
 
