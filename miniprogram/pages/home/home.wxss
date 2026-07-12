@@ -9,7 +9,7 @@
   margin-bottom: 18rpx;
   color: #8a8172;
   text-align: center;
-  font-size: 22rpx;
+  font-size: 20rpx;
   line-height: 1;
   white-space: nowrap;
 }
@@ -81,6 +81,8 @@
 
 .choice-list {
   margin-top: 26rpx;
+  margin-left: -18rpx;
+  margin-right: -18rpx;
   display: flex;
   flex-direction: column;
   gap: 20rpx;
@@ -89,7 +91,7 @@
 .choice {
   width: 100%;
   min-height: 144rpx;
-  padding: 26rpx 30rpx 24rpx;
+  padding: 26rpx 36rpx 24rpx;
   display: flex;
   align-items: center;
   gap: 26rpx;

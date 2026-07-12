@@ -1,5 +1,5 @@
 <view class="page home-page">
-  <view class="nav-subtitle">给值得留下的一刻</view>
+  <view class="nav-subtitle">给值得留下的一刻，留一张能看见的票</view>
 
   <image class="home-photo" src="/assets/home-keepsake.jpg" mode="aspectFill" />
 
