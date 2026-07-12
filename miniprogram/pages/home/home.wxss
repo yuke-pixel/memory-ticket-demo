@@ -1,25 +1,57 @@
 .home-page {
   min-height: 100vh;
-  padding: 18rpx 32rpx 44rpx;
+  padding: 56rpx 24rpx 44rpx;
   background: #f9f5ee;
   overflow-x: hidden;
 }
 
+.custom-nav {
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-circle {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #dfd2bf;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  color: #1f2a33;
+  font-size: 24rpx;
+}
+
+.nav-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-brand {
+  color: #1f2a33;
+  font-size: 34rpx;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
 .nav-subtitle {
-  height: 34rpx;
-  margin-bottom: 20rpx;
+  margin-top: 12rpx;
   color: #8a8172;
-  text-align: center;
   font-size: 20rpx;
-  line-height: 34rpx;
+  line-height: 1.25;
   white-space: nowrap;
 }
 
 .home-photo {
   display: block;
   width: 100%;
-  height: 328rpx;
-  margin-top: 0;
+  height: 336rpx;
+  margin-top: 28rpx;
   border-radius: 28rpx;
   background: #efe4d7;
   box-shadow: 0 18rpx 36rpx rgba(83, 70, 54, 0.1);
@@ -81,23 +113,21 @@
 }
 
 .choice-list {
-  margin-top: 26rpx;
-  margin-left: -24rpx;
-  margin-right: -24rpx;
+  margin-top: 28rpx;
   display: flex;
   flex-direction: column;
-  gap: 20rpx;
+  gap: 22rpx;
 }
 
 .choice {
   width: 100%;
   margin: 0;
-  min-height: 124rpx;
-  padding: 24rpx 30rpx 24rpx 28rpx;
+  min-height: 142rpx;
+  padding: 24rpx 26rpx 24rpx 20rpx;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24rpx;
+  gap: 22rpx;
   text-align: left;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
@@ -111,14 +141,15 @@
 }
 
 .choice-icon {
-  width: 72rpx;
-  height: 72rpx;
+  width: 92rpx;
+  height: 92rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 18rpx;
-  font-size: 38rpx;
+  font-size: 46rpx;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .choice-icon.tan {
@@ -136,6 +167,11 @@
 .choice-icon.soft {
   background: #eef1e7;
   color: #7f8f72;
+}
+
+.choice-thumb {
+  width: 100%;
+  height: 100%;
 }
 
 .choice-text {

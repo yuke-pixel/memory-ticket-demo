@@ -1,5 +1,12 @@
 <view class="page home-page">
-  <view class="nav-subtitle">给值得留下的一刻，留一张能看见的票</view>
+  <view class="custom-nav">
+    <view class="nav-circle">⌂</view>
+    <view class="nav-title">
+      <text class="nav-brand">记忆票根</text>
+      <text class="nav-subtitle">给值得留下的一刻，留一张能看见的票</text>
+    </view>
+    <view class="nav-circle">↶</view>
+  </view>
 
   <image class="home-photo" src="/assets/home-keepsake.jpg" mode="aspectFill" />
 
@@ -38,7 +45,9 @@
       </view>
     </button>
     <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
-      <text class="choice-icon soft">🖼️</text>
+      <view class="choice-icon soft">
+        <image class="choice-thumb" src="/assets/postcard-letter.jpg" mode="aspectFill" />
+      </view>
       <view class="choice-text">
         <text class="choice-title">其他</text>
         <text class="choice-desc">留住那些说不清的瞬间</text>
