@@ -114,8 +114,8 @@
 
 .choice-list {
   margin-top: 28rpx;
-  margin-left: -18rpx;
-  margin-right: -18rpx;
+  width: 750rpx;
+  margin-left: -24rpx;
   display: flex;
   flex-direction: column;
   gap: 22rpx;
@@ -124,12 +124,12 @@
 .choice {
   width: 100%;
   margin: 0;
-  min-height: 152rpx;
-  padding: 26rpx 30rpx 26rpx 18rpx;
+  min-height: 142rpx;
+  padding: 24rpx 34rpx 24rpx 22rpx;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24rpx;
+  gap: 22rpx;
   text-align: left;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
@@ -143,13 +143,13 @@
 }
 
 .choice-icon {
-  width: 102rpx;
-  height: 102rpx;
+  width: 92rpx;
+  height: 92rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 18rpx;
-  font-size: 50rpx;
+  font-size: 46rpx;
   flex-shrink: 0;
   overflow: hidden;
 }
