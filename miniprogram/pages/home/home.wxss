@@ -116,25 +116,27 @@
   margin-top: 28rpx;
   width: 750rpx;
   margin-left: -24rpx;
-  padding: 0 12rpx;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .choice-list {
-  width: 100%;
+  width: 1251rpx;
+  padding: 0 24rpx;
   display: flex;
   flex-direction: column;
-  gap: 18rpx;
+  gap: 22rpx;
 }
 
 .choice {
-  width: 100%;
+  width: 1203rpx;
   margin: 0;
-  min-height: 104rpx;
-  padding: 14rpx 34rpx;
+  min-height: 128rpx;
+  padding: 22rpx 72rpx 22rpx 38rpx;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24rpx;
+  gap: 30rpx;
   text-align: left;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
@@ -148,13 +150,13 @@
 }
 
 .choice-icon {
-  width: 64rpx;
-  height: 64rpx;
+  width: 84rpx;
+  height: 84rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 18rpx;
-  font-size: 30rpx;
+  font-size: 40rpx;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -182,7 +184,7 @@
 }
 
 .choice-text {
-  flex: 1;
+  width: 820rpx;
   min-width: 0;
   text-align: left;
 }
@@ -190,9 +192,9 @@
 .choice-title {
   display: block;
   color: #14191f;
-  font-size: 30rpx;
+  font-size: 34rpx;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -200,10 +202,10 @@
 
 .choice-desc {
   display: block;
-  margin-top: 14rpx;
+  margin-top: 16rpx;
   color: #718192;
-  font-size: 24rpx;
-  line-height: 1;
+  font-size: 26rpx;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
