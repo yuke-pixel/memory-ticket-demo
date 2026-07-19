@@ -114,11 +114,11 @@
 
 .choice-section {
   margin-top: 28rpx;
-  width: 100%;
+  width: calc(100vw - 48rpx);
 }
 
 .choice-list {
-  width: 100%;
+  width: calc(100vw - 48rpx);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -126,7 +126,9 @@
 }
 
 .choice {
-  width: 100%;
+  width: calc(100vw - 48rpx);
+  min-width: calc(100vw - 48rpx);
+  flex-shrink: 0;
   margin: 0;
   height: 128rpx;
   padding: 20rpx 28rpx;
@@ -138,6 +140,10 @@
   border-radius: 24rpx;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 14rpx 30rpx rgba(83, 70, 54, 0.07);
+}
+
+.choice-active {
+  opacity: 0.86;
 }
 
 .choice-content {

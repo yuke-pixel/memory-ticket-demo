@@ -24,7 +24,7 @@
 
   <view class="choice-section">
     <view class="choice-list">
-      <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
+      <view class="choice paper-card" hover-class="choice-active" role="button" data-scene="旅行" bindtap="chooseScene">
         <view class="choice-content">
           <text class="choice-icon tan">🧳</text>
           <view class="choice-text">
@@ -32,8 +32,8 @@
             <text class="choice-desc">把路上的某一天做成登机牌或车票</text>
           </view>
         </view>
-      </button>
-      <button class="choice paper-card" data-scene="毕业" bindtap="chooseScene">
+      </view>
+      <view class="choice paper-card" hover-class="choice-active" role="button" data-scene="毕业" bindtap="chooseScene">
         <view class="choice-content">
           <text class="choice-icon blue">🎓</text>
           <view class="choice-text">
@@ -41,8 +41,8 @@
             <text class="choice-desc">留下同学、教室、操场和告别那天</text>
           </view>
         </view>
-      </button>
-      <button class="choice paper-card" data-scene="一个重要的人" bindtap="chooseScene">
+      </view>
+      <view class="choice paper-card" hover-class="choice-active" role="button" data-scene="一个重要的人" bindtap="chooseScene">
         <view class="choice-content">
           <text class="choice-icon gray">👥</text>
           <view class="choice-text">
@@ -50,8 +50,8 @@
             <text class="choice-desc">把 TA 的声音和老照片放进一张票根</text>
           </view>
         </view>
-      </button>
-      <button class="choice paper-card" data-scene="其他" bindtap="chooseScene">
+      </view>
+      <view class="choice paper-card" hover-class="choice-active" role="button" data-scene="其他" bindtap="chooseScene">
         <view class="choice-content">
           <view class="choice-icon soft">
             <image class="choice-thumb" src="/assets/postcard-letter.jpg" mode="aspectFill" />
@@ -61,7 +61,7 @@
             <text class="choice-desc">留住那些说不清的瞬间</text>
           </view>
         </view>
-      </button>
+      </view>
     </view>
   </view>
 </view>
