@@ -117,10 +117,11 @@
   width: 750rpx;
   margin-left: -24rpx;
   padding: 0;
+  white-space: nowrap;
 }
 
 .choice-list {
-  width: 100%;
+  width: 1219rpx;
   padding: 0 8rpx;
   display: flex;
   flex-direction: column;
@@ -128,19 +129,26 @@
 }
 
 .choice {
-  width: 100%;
+  width: 1203rpx;
   margin: 0;
   height: 128rpx;
-  padding: 20rpx 32rpx;
+  padding: 20rpx 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 26rpx;
+  justify-content: center;
   text-align: left;
   border: 1rpx solid #dfd2bf;
   border-radius: 24rpx;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 14rpx 30rpx rgba(83, 70, 54, 0.07);
+}
+
+.choice-content {
+  width: 720rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 26rpx;
 }
 
 .choice:first-child {
