@@ -117,10 +117,11 @@
   width: 750rpx;
   margin-left: -24rpx;
   padding: 0;
+  white-space: nowrap;
 }
 
 .choice-list {
-  width: 100%;
+  width: 1250rpx;
   padding: 0 4rpx;
   display: flex;
   flex-direction: column;
@@ -128,7 +129,7 @@
 }
 
 .choice {
-  width: 100%;
+  width: 1242rpx;
   margin: 0;
   height: 128rpx;
   padding: 20rpx 0;
