@@ -22,8 +22,9 @@
     <text>可做实体</text>
   </view>
 
-  <scroll-view class="choice-bleed" scroll-x="true" scroll-left="128" enhanced="true" show-scrollbar="false">
-    <view class="choice-list">
+  <scroll-view class="choice-viewport" scroll-x="true" scroll-left="128" enhanced="true" show-scrollbar="false">
+    <view class="choice-bleed">
+      <view class="choice-list">
       <button class="choice paper-card" data-scene="旅行" bindtap="chooseScene">
         <view class="choice-content">
           <text class="choice-icon tan">🧳</text>
@@ -62,6 +63,7 @@
           </view>
         </view>
       </button>
+      </view>
     </view>
   </scroll-view>
 </view>

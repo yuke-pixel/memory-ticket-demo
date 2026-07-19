@@ -112,12 +112,16 @@
   white-space: nowrap;
 }
 
-.choice-bleed {
+.choice-viewport {
   margin-top: 28rpx;
   width: 750rpx;
   margin-left: -24rpx;
   padding: 0;
   white-space: nowrap;
+}
+
+.choice-bleed {
+  width: 1250rpx;
 }
 
 .choice-list {
